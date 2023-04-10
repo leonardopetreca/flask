@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ============= FAVICON =============-->
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+
+    <!-- ============= CSS =============-->
+    <!--  <link rel="stylesheet" href="assets/css/style.css">-->
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='estilo/style.css')}}"
+    />
+
+    <title>Elanco | Home</title>
+  </head>
+  <body>
+    <!-- ============= HEADER =============-->
+    <header class="header">
+      <div class="header__conteiner container">
+        <img
+          src="{{url_for('static', filename='logo.png')}}"
+          width="150px"
+          alt=""
+        />
+      </div>
+    </header>
+
+    <!-- ============= MAIN =============-->
+    <main class="main">
+      <!-- ============= HOME =============-->
+      <section class="section home">
+        <div class="home__container container grid">
+          <div class="grid">
+            <h1 class="home__title">
+              Faça uma simulação e veja o quanto<br />
+              sua fazenda pode faturar a mais esse ano!
+            </h1>
+            <a class="button" href="#formZimprova"> Iniciar simulação </a>
+            <h2 class="home__subtitle">
+              Descubra em menos de 2 minutos o quanto seu lucro pode aumentar
+              com o Zimprova™ no suplemento.
+            </h2>
+          </div>
+
+          {% include "formulario.html" %} {% block body %}{% endblock %}
+        </div>
+
+        <!-- Colocar aqui o formulário -->
+
+        <!-- Fim do formulário -->
+
+        <div class="home__sacaria">
+          <img
+            src="{{url_for('static', filename='vetor.png')}}"
+            alt=""
+            class="home__image"
+          />
+
+          <div class="container grid">
+            <div>
+              <h2>Zimprova™</h2>
+              <p>
+                Prova que produzir mais<br />
+                também é sustentável!
+              </p>
+            </div>
+
+            <img
+              src="{{url_for('static', filename='sacaria.png')}}"
+              alt=""
+              class="home__img"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============= FOOTER =============-->
+    <footer class="footer">
+      <div class="footer__container container grid">
+        <div>
+          <img src="{{url_for('static', filename='logo-footer.png')}}" alt="" />
+
+          <div class="footer__links">
+            <a href="#">Copyright 2023 - Elanco Saúde Animal</a>
+            <a href="#">Declaração de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+          </div>
+        </div>
+
+        <ul>
+          <li>1. Prêmio Rural Top List 2022.</li>
+
+          <li>
+            2. LIMEDE, Arnaldo Cintra et al. Effects of supplementation with
+            narasin, salinomycin, or flavomycin on performance and ruminal
+            fermentation characteristics of Bos indicus Nellore cattle fed with
+            forage-based diets. Journal Of Animal Science, v.99, n.4, p. 1-11, 1
+            abr. 2021. MISZURA, Alexandre A., et al. PSXII-33 Effects of feed
+            additives on performance of yearling bulls fed high forage diet.
+            Journal Of Animal Science, v.97, n.3, p.425-425, dez. 2019. POLIZEL,
+            Daniel M., et al. PSXII-34 Narasin improves performance of grazing
+            Nellore yearling bulls receiving protein supplement. Journal Of
+            Animal Science, v.97, n.3, p.421-422, dez. 2019. POLIZEL, Daniel M.,
+            et al. PSXIV-9 Narasin improves performance of grazing Nellore
+            yearling bulls. Journal Of Animal Science, v. 96, n. 3, p. 447-447,
+            dez. 2018.
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

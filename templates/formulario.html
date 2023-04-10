@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ============= FAVICON =============-->
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='estilo/form.css')}}"
+    />
+    <!--<link
+      href="https://fonts.googleapis.com/css?family=Fira Sans"
+      rel="stylesheet"
+    /> -->
+
+    <title>Elanco | Formulário</title>
+  </head>
+
+  <style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+  </style>
+  <body>
+    <form form id="formZimprova" method="Post">
+      <!-- step 1-->
+      <div id="step1" class="stepForm">
+        <img
+          src="{{url_for('static', filename='logo_zimprova.png')}}"
+          width="150px"
+        />
+        <h3>Descubra o quanto você pode faturar a mais com o Zimprova™!</h3>
+        <p class="home__description">
+          Com menos de 1 minuto você poderá verificar se o Zimprova™ funciona
+          para você e quanto você pode faturar a mais em 2023.
+        </p>
+
+        <p class="home__description" style="color: #791600; font-weight: 700">
+          Bora tentar?
+        </p>
+        <div class="buttons-field">
+          <button type="button" class="next-button" onclick="nextStep()">
+            Iniciar Teste
+          </button>
+        </div>
+      </div>
+      <!-- step 2-->
+
+      <div id="step2" class="stepForm">
+        <img
+          src="{{url_for('static', filename='logo_zimprova.png')}}"
+          width="150px"
+        />
+
+        <div class="form-fields alone">
+          <div class="form-group">
+            <div class="fieldForm">
+              <label for="nome">Como você se chama? </label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Nome"
+                required
+              />
+            </div>
+            <div class="fieldForm">
+              <label for="sobrenome"> </label>
+              <input
+                type="text"
+                id="sobrenome"
+                name="sobrenome"
+                placeholder="Sobrenome"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="fieldForm">
+              <label for="melhor-email">Qual o seu melhor email? </label>
+              <input
+                type="email"
+                id="melhor-email"
+                name="melhor-email"
+                required
+              />
+            </div>
+            <div class="fieldForm">
+              <label for="telefone">Qual é o seu telefone/WhatsApp? </label>
+              <input type="tel" id="telefone" name="telefone" required />
+            </div>
+          </div>
+        </div>
+
+        <div class="buttons-field">
+          <button type="button" class="prev-button" onclick="prevStep()">
+            Anterior
+          </button>
+          <button type="button" class="next-button" onclick="nextStep()">
+            Próximo
+          </button>
+        </div>
+      </div>
+
+      <!-- step 3-->
+      <div id="step3" class="stepForm">
+        <img
+          src="{{url_for('static', filename='logo_zimprova.png')}}"
+          width="150px"
+        />
+        <h3>
+          Agora, precisamos saber um pouquinho sobre a sua fazenda para informar
+          quanto você pode lucrar a mais em 2023.
+        </h3>
+
+        <div class="form-fields">
+          <div class="form-group">
+            <div class="fieldForm">
+              <label for="quantidade_animais">
+                Há quantos animais na propriedade?</label
+              >
+              <input
+                type="number"
+                id="quantidade_animais"
+                name="quantidade_animais"
+                value="{{quantidade_animais_answer}}"
+                step="0.001"
+                required
+              />
+            </div>
+            <div class="fieldForm">
+              <label for="peso_medio"
+                >Qual é o peso inicial médio? &#40;Kg&#41;</label
+              >
+              <input
+                type="number"
+                id="peso_medio"
+                name="peso_medio"
+                value="{{peso_medio_answer}}"
+                placeholder="Kg"
+                step="0.001"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="fieldForm">
+              <label for="aditivo_utilizado"
+                >Qual aditivo você utiliza no pasto?</label
+              >
+              <select id="aditivo_utilizado" name="aditivo_utilizado" required>
+                <option value="96" select>Sem aditivo</option>
+                <option value="94">Salinomicina</option>
+                <option value="59">Lasalocida</option>
+                <option value="98">Virginamicina</option>
+                <option value="65">Flavomicina</option>
+              </select>
+            </div>
+
+            <div class="fieldForm">
+              <label for="gmd"
+                >Qual é o ganho de peso diário? &#40;gramas/dia&#41;</label
+              >
+              <input
+                type="number"
+                id="gmd"
+                name="gmd"
+                value="{{gmd_answer}}"
+                placeholder="gramas/dia"
+                step="1"
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="buttons-field">
+          <button type="button" class="prev-button" onclick="prevStep()">
+            Anterior
+          </button>
+          <button type="button" class="next-button" onclick="nextStep()">
+            Próximo
+          </button>
+        </div>
+      </div>
+
+      <!-- step 4-->
+
+      <div id="step4" class="stepForm">
+        <img
+          src="{{url_for('static', filename='logo_zimprova.png')}}"
+          width="150px"
+        />
+        <h3>
+          95% pronto! Últimas informações e você vai descobrir o quanto pode
+          faturar a mais em 2023 no seu pasto.
+        </h3>
+
+        <div class="form-fields alone">
+          <div class="fieldForm">
+            <label for="local">Em qual cidade fica sua propriedade? </label>
+            <input type="text" id="local" name="local" required />
+          </div>
+
+          <div class="fieldForm">
+            <label for="preco_arroba"
+              >Qual é o preço do arroba do boi magro por aí?
+              &#40;R$/arroba&#41;</label
+            >
+            <input
+              type="number"
+              id="preco_arroba"
+              name="preco_arroba"
+              value="{{preco_arroba_answer}}"
+              placeholder="R$/arroba"
+              step="0.001"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="buttons-field">
+          <button type="button" class="prev-button" onclick="prevStep()">
+            Anterior
+          </button>
+          <button type="button" class="next-button" onclick="nextStep()">
+            Próximo
+          </button>
+        </div>
+      </div>
+
+      <!-- step 5-->
+
+      <div id="step5" class="stepForm">
+        <img
+          src="{{url_for('static', filename='logo_zimprova.png')}}"
+          width="150px"
+        />
+        <h3>
+          Legal! Agora, só temos algumas dúvidas sobre a nutrição do pasto.
+        </h3>
+
+        <div class="form-fields alone">
+          <div class="fieldForm">
+            <label for="preco_suplemento"
+              >Qual é o preço do suplemento atual? &#40;R$/Kg&#41;</label
+            >
+            <input
+              type="number"
+              id="preco_suplemento"
+              name="preco_suplemento"
+              value="{{preco_suplemento_answer}}"
+              placeholder="R$/Kg"
+              step="0.001"
+              required
+            />
+          </div>
+
+          <div class="fieldForm">
+            <label for="suplemento_atual"
+              >Qual é o consumo indicado do suplemento atual?
+              &#40;gramas/cabeça/dia&#41;</label
+            >
+            <input
+              type="number"
+              id="suplemento_atual"
+              name="suplemento_atual"
+              value="{{suplemento_atual_answer}}"
+              placeholder="gramas/cabeça/dia"
+              step="0.001"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="buttons-field">
+          <button type="button" class="prev-button" onclick="prevStep()">
+            Anterior
+          </button>
+          <button>Ver Resultado!</button>
+        </div>
+      </div>
+
+      <!-- step 5-->
+    </form>
+
+    <script>
+      const steps = document.getElementsByClassName("stepForm");
+      var atual = 0;
+      for (let i = 1; i < steps.length; i++) {
+        steps[i].style.display = "none";
+      }
+
+      function nextStep() {
+        steps[atual].style.display = "none";
+        atual = atual + 1;
+        steps[atual].style.display = "block";
+      }
+
+      function prevStep() {
+        steps[atual].style.display = "none";
+        atual = atual - 1;
+        steps[atual].style.display = "block";
+      }
+    </script>
+  </body>
+</html>

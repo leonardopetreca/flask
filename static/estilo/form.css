@@ -1,0 +1,191 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700;800&display=swap");
+/*Variáveis */
+
+:root {
+  --Fonte: "Fira Sans", sans-serif;
+  --Cor-texto: #02253e;
+  --Cor-vinho: #791600;
+  --Peso-texto: 700;
+  --Tamanho-texto: 15px;
+
+  --Tamanho-titulo: 16px;
+}
+
+* {
+  font-family: var(--Fonte);
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.stepForm p {
+  color: var(--Cor-texto);
+  font-weight: var(--Peso-texto);
+  /*font-size: var(--Tamanho-texto);*/
+}
+
+.stepForm h3 {
+  color: var(--Cor-texto);
+  font-weight: var(--Peso-texto);
+  font-size: 1.2rem;
+}
+
+.stepForm {
+  border: #e5e5e5 1px solid;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.31);
+  border-radius: 50px;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  margin: 0px auto;
+
+  padding: 50px 30px;
+
+  text-align: center;
+}
+
+.home__description p {
+  font-size: 1.125rem;
+}
+/* Botões*/
+
+button {
+  cursor: pointer;
+}
+button:hover {
+  background-color: var(--Cor-vinho) !important;
+}
+.buttons-field {
+  width: 70%;
+  margin: 0px auto;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+}
+.buttons-field button {
+  text-transform: uppercase;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #28b028;
+  padding: 12px 0px;
+  border-radius: 15px;
+  border: none;
+  width: 100%;
+  margin: 0px 10px;
+}
+
+/*inputs*/
+.form-fields {
+  width: 80%;
+  display: flex;
+  margin: 0px auto;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.alone {
+  flex-direction: column !important;
+}
+
+.fieldForm {
+  display: flex;
+  flex-direction: column;
+  margin: 12px 0px;
+}
+
+.fieldForm label {
+  text-align: left;
+  font-weight: var(--Peso-texto);
+  font-size: var(--Tamanho-texto);
+  color: var(--Cor-texto);
+  margin-bottom: 10px;
+}
+
+.fieldForm input,
+.fieldForm select {
+  border-radius: 5px;
+  padding: 12px 8px;
+  outline: none;
+  border: #e5e5e5 1px solid;
+  box-shadow: 1px 2px 5px #e5e5e5;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  justify-content: space-between;
+}
+.form-group .fieldForm {
+  width: 48%;
+  justify-content: space-between;
+}
+
+.stepForm img {
+  margin-bottom: 10px;
+}
+#step1 {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+#step1 p {
+  margin: 18px 0px;
+}
+
+/*responsivo*/
+@media only screen and (max-width: 750px) {
+  .stepForm {
+    padding: 50px 20px;
+    width: 90%;
+  }
+  .buttons-field {
+    margin-top: 10px;
+    width: 80%;
+    flex-direction: column-reverse;
+  }
+
+  .buttons-field button {
+    margin: 5px 0px;
+    padding: 12px 0px;
+  }
+
+  .fieldForm input,
+  .fieldForm select {
+    padding: 12px 20px;
+  }
+
+  .stepForm img {
+    width: 170px !important;
+  }
+
+  .form-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .fieldForm {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .stepForm {
+    width: 95%;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .stepForm {
+    max-width: 700px !important;
+  }
+}

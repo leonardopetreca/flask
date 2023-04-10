@@ -1,0 +1,356 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700;800&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --first-color: #02253e;
+  --header-color: #0075bc;
+  --button-color: #3574b5;
+  --white-color: #fff;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-bold: 700;
+  --font-extra-bold: 800;
+
+  /*========== Margenes Bottom ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Fira Sans", sans-serif;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+}
+
+body {
+  background-color: #e4e4e4;
+  color: var(--first-color);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--first-color);
+  font-weight: var(--font-extra-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 998px;
+  margin-inline: auto;
+}
+
+.main {
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+}
+
+/*=============== HEADER ===============*/
+.header {
+  background-color: var(--header-color);
+  clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+  padding: 1.875rem 0 5rem;
+}
+
+/*=============== BUTTONS ===============*/
+.button {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: var(--font-extra-bold);
+  text-transform: uppercase;
+  color: var(--white-color);
+  background-color: var(--button-color);
+  border-radius: 1.5rem;
+  padding: 1.25rem 6.25rem;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.button:hover {
+  background-color: var(--first-color);
+}
+
+.button--small {
+  font-size: 1rem;
+  padding: 1rem 6.25rem;
+  border-radius: 1.125rem;
+}
+
+/*=============== HOME ===============*/
+body {
+  background: url("/static/home-bg.png") no-repeat center center / cover;
+}
+
+.home__container {
+  justify-content: center;
+  row-gap: 5rem;
+}
+
+.home__container > div:nth-child(1) {
+  justify-items: center;
+  row-gap: 1.875rem;
+}
+
+.home__title,
+.home__subtitle {
+  text-align: center;
+  font-weight: var(--font-extra-bold);
+}
+
+.home__title {
+  font-size: 2.1875rem;
+  text-transform: uppercase;
+}
+
+.home__subtitle {
+  font-size: 1.875rem;
+}
+
+.home__container > div:nth-child(2) {
+  width: 580px;
+  justify-self: center;
+  justify-items: center;
+  row-gap: 1.875rem;
+  padding: 42px 20px 55px;
+  background-color: var(--white-color);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.31);
+  border-radius: 3.125rem;
+}
+
+.home__description {
+  font-size: 1.125rem;
+  font-weight: var(--font-bold);
+}
+
+.home__container > div:nth-child(3) {
+  position: relative;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3.125rem;
+}
+
+.home__sacaria {
+  position: relative;
+  margin-top: 5rem;
+}
+
+.home__image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.home__sacaria div {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.home__sacaria h2 {
+  font-size: 5rem;
+  font-style: italic;
+  margin-bottom: var(--mb-1-5);
+}
+
+.home__sacaria p {
+  font-size: 25px;
+  font-weight: var(--font-extra-bold);
+  text-transform: uppercase;
+}
+
+.home__img {
+  width: 380px;
+  position: relative;
+  justify-self: flex-end;
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+  background-color: #333333;
+  padding: 3.125rem 1.25rem 1.875rem;
+}
+
+.footer__container {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 20px;
+}
+
+.footer img {
+  margin-bottom: var(--mb-1);
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--mb-0-5);
+}
+
+.footer__links a {
+  font-size: 1.25rem;
+  color: var(--white-color);
+}
+
+.footer ul {
+  color: var(--white-color);
+}
+
+.footer ul li {
+  font-size: 0.875rem;
+}
+
+/*=============== BREAKPOINTS ===============*/
+@media screen and (max-width: 992px) {
+  .container {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+  }
+
+  .button {
+    font-size: 0.9375rem;
+    padding: 1.25rem 2.5rem;
+    border-radius: 0.9375rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home__title {
+    font-size: 1.75rem;
+  }
+
+  .home__subtitle {
+    font-size: 1.25rem;
+  }
+
+  .home__sacaria h2 {
+    font-size: 3.125rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .home__container > div:nth-child(2) {
+    width: 100%;
+  }
+
+  .home__title {
+    font-size: 1.5625rem;
+  }
+
+  .home__description {
+    font-size: 1rem;
+  }
+
+  .home__sacaria p {
+    font-size: 1.125rem;
+  }
+
+  .footer__container {
+    grid-template-columns: 1fr;
+  }
+
+  .home__sacaria div {
+    grid-template-columns: 1fr;
+    row-gap: 1.875rem;
+    justify-items: center;
+  }
+
+  .home__img {
+    justify-self: initial;
+  }
+
+  .home__sacaria h2,
+  p {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .header {
+    clip-path: polygon(0 0, 100% 0, 100% 59%, 0% 100%);
+    padding: 1.875rem 0 1.875rem;
+    margin-bottom: var(--mb-1-5);
+  }
+
+  .header img {
+    width: 100px;
+  }
+
+  .home__container {
+    row-gap: 1.25rem;
+  }
+
+  .home__title {
+    font-size: 1.125rem;
+  }
+
+  .home__subtitle {
+    font-size: 1rem;
+  }
+
+  .home__description {
+    font-size: 0.9375rem;
+  }
+
+  .home__container > div:nth-child(2) {
+    padding: 1.25rem 1.25rem 1.875rem;
+    border-radius: 1.25rem;
+  }
+
+  .home__sacaria {
+    margin-top: 1.25rem;
+  }
+
+  .home__img {
+    width: 280px;
+  }
+
+  .footer__links a {
+    font-size: 0.9375rem;
+  }
+}
+
+/* For small devices */
+
+/* For medium devices */
+
+/* For lage devices */

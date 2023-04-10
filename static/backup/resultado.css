@@ -1,0 +1,175 @@
+:root {
+  --Fonte: "Fira Sans";
+  --Cor-texto: #333333;
+  --Cor-vinho: #791600;
+  --Peso-texto: 700;
+  --Tamanho-texto: 14px;
+
+  --Tamanho-titulo: 16px;
+}
+#ex {
+  display: none;
+}
+body {
+  overflow-x: hidden;
+}
+
+*,
+body {
+  font-family: var(--Fonte) !important;
+  word-wrap: break-word;
+}
+
+p {
+  font-size: var(--Tamanho-texto);
+  font-weight: 500;
+}
+
+body {
+  margin: 0px !important;
+}
+
+#resultados {
+  display: flex;
+  flex-direction: row;
+  border: solid red 1px;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("/static/zimprovaPremixeira_background.jpg");
+
+  margin: 0px !important;
+  height: 100%;
+  padding: 0px 40px;
+}
+
+.resultados-col {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0px;
+}
+
+.resultados-col:first-child {
+  position: relative;
+
+  width: 60%;
+}
+
+.resultados-col:last-child {
+  position: relative;
+  width: 40%;
+
+  padding: 0px 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/*painel de resultados*/
+
+#painel-resultados {
+  background-color: white;
+  border-radius: 30px;
+  padding: 25px;
+  width: 90%;
+}
+
+#painel-resultados-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#painel-resultados-body {
+  border: #e5e5e5 1px solid;
+  box-shadow: 2px 2px 5px #e5e5e5;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+.texto-inicio {
+  font-size: 15px;
+}
+.texto-inicio:last-child {
+  margin-top: 20px;
+}
+
+/*copy*/
+
+#copy h1 {
+  font-size: 45px;
+
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 3px 3px 10px #000;
+}
+#copy h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: white;
+  text-shadow: 3px 3px 10px #000;
+}
+
+.copy-zimprova {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+#text-zimprova h3 {
+  font-size: 30px;
+  font-weight: 800;
+  color: #fdb916;
+  text-transform: uppercase;
+}
+
+#brand {
+  color: white;
+  font-family: var(--Fonte);
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/*responsivo*/
+
+@media only screen and (max-width: 500px) {
+  .copy-zimprova {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  #text-zimprova h3 {
+    font-size: 25px;
+  }
+
+  #imagem-zimprova {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #resultados {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .resultados-col {
+    width: 100% !important;
+  }
+
+  #copy h1 {
+    text-align: center;
+    font-size: 35px;
+  }
+  #copy h2 {
+    text-align: center;
+    font-size: 25px;
+  }
+
+  #copy {
+    margin-bottom: 0px !important;
+  }
+}

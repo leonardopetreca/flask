@@ -1,0 +1,99 @@
+<div  id="ex"><h1>Obrigado</h1>
+
+<p>Ola, fulano. Seguem seus resultados</p>
+<br />
+<br />
+<table>
+  <tr>
+    <td>prop</td>
+    <td>atual</td>
+    <td>zimprova</td>
+  </tr>
+
+  {% for x in lista_atual_res%}
+
+  <tr>
+    <td>{{x}}</td>
+    <td>{{lista_atual_res[x]}}</td>
+    <td>{{lista_zimprova_res[x]}}</td>
+  </tr>
+  {% endfor %}
+</table>
+</div>
+<style>
+  table td {
+    width: 200px;
+  }
+  table {
+    margin-top: 0px;
+  }
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Resultado Zimprova™</title>
+
+  <link
+    rel="stylesheet"
+    href="{{url_for('static', filename='estilo/resultado.css')}}"
+  />
+  <link href='https://fonts.googleapis.com/css?family=Fira Sans' rel='stylesheet'>
+</head>
+<body>
+  <section id="resultados">
+    <div  id = "copy" class="resultados-col">
+      <h1>Teste Zimprova™ Concluído!</h1>
+      <h2>Você pode lucrar  até 7,35x a mais.</h2>
+      <div class="copy-zimprova">
+        <div id="imagem-zimprova">
+          <img src="{{url_for('static', filename='Zimprova.png')}}"
+          width="150px" />
+        </div>
+        <div id="text-zimprova">
+          <h3>Prova que produzir mais também é sustentável!</h3>
+          <p id="brand">Zimprova™</p>
+        </div>
+      </div>
+    </div>
+    <div class="resultados-col">
+        <div id="painel-resultados">
+          <div id="painel-resultados-header">
+              <h3>
+                Olá, {{lista_contato_res['Nome']}}!<br />
+                Esse é o resultado do seu teste.
+              </h3>
+              <p>Os cálculos foram desenvolvidos por nossos especialistas. O Zimprova™ possui mais de 18 estudos publicados que comprovam sua eficácia. Pode confiar!</p>
+          </div>
+
+          <div id="painel-resultados-body">
+              <p class="texto-inicio"><b>Peso inicial informado:</b> {{lista_atual_res['pesoInicial']}} Kg</p>
+              <p>
+                Atualmente, seu <b>ganho médio diário</b> é de<b> {{lista_atual_res['gmd']}}  g</b>, com o
+                Zimprova™, <b>seria de {{lista_zimprova_res['gmd']}} g</b>, gerando até  <b>{{lista_zimprova_res['ganhoPeso']}} kg </b> a mais no período, com
+                <b>peso final por cabeça de  {{lista_zimprova_res['pesoFinal']}} kg</b>, <b> {{lista_zimprova_res['ganhoPeso%']}} %</b> a mais do que sem o Zimprova™.
+              </p>
+
+              <p>
+                Atualmente, você produz<b> {{lista_atual_res['producaoArroba']}}  arrobas por cabeça </b>, totalizando
+                <b> {{lista_atual_res['producaoTotalArroba']}} arrobas</b>. Mas com o Zimprova™, seu potencial é de <b> {{lista_zimprova_res['producaoArroba']}} arrobas por
+                cabeça</b>, totalizando <b>{{lista_zimprova_res['producaoTotalArroba']}} arrobas, um resultado {{lista_zimprova_res['ganhoArroba%']}} % maior.</b>
+              </p> 
+           
+              <p class="texto-inicio"><b> Vamos falar de
+                lucro? </b></p>
+              <p>A receita produzida com base nas suas informações é de <b>
+                R$ {{lista_atual_res['receitaProduzida']}}</b>, mas<b> com Zimprova™, seria de R$ {{lista_zimprova_res['receitaProduzida']}}, que é  {{lista_zimprova_res['aumentoReceita']}} % maior.</b></p>
+                
+              <p> Para gerar tudo isso, o Zimprova™ te custaria<b> R$  {{lista_zimprova_res[ 'desembolsoAdicional']}}</b>, ou seja, <b>seu
+                Lucro Líquido seria de R$ {{lista_zimprova_res['lucroLiquido']}}</b>. </p>
+                
+                <p> <b>O investimento em Zimprova™ te
+                retornará R$ {{lista_zimprova_res['ROI']}} a cada R$1,00 investido </b></p> 
+              </p>
+        </div>
+        </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ============= FAVICON =============-->
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+
+    <!-- ============= CSS =============-->
+
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='estilo/resultados.css')}}"
+    />
+
+    <title>Elanco | Resultado Zimprova™</title>
+  </head>
+  <body>
+    <!-- ============= HEADER =============-->
+    <header class="header">
+      <div class="header__conteiner container">
+        <img src="{{url_for('static', filename='logo.png')}}" alt="" />
+      </div>
+    </header>
+
+    <!-- ============= MAIN =============-->
+    <main class="main">
+      <!-- ============= HOME =============-->
+      <section class="section home">
+        <div class="home__container container grid">
+          <div>
+            <h1 class="home__title">Testes Zimprova™ concluído!</h1>
+            <h2 class="home__subtitle">
+              Você pode faturar mais com o Zimrova™!
+            </h2>
+
+            <div class="home__content">
+              <img
+                src="{{url_for('static', filename='sacariaresultados.png')}}"
+                alt=""
+              />
+
+              <div>
+                <h2 class="home__zimprova">ZIMPROVA™</h2>
+
+                <p class="home__description">
+                  Prova que produzir<br />
+                  mais também é<br />
+                  sustentável!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="box__header">
+              <h3>
+                Olá, {{lista_contato_res ['Nome']}}!<br />Esse é o resultado do
+                seu teste.
+              </h3>
+
+              <p>
+                Os cálculos foram desenvolvidos por nossos especialistas. O
+                Zimprov™ a possui mais de 18 estudos publicados que comprovam
+                sua eficácia. Pode confiar!
+              </p>
+            </div>
+
+            <div class="box__content grid">
+              <div>
+                <h4>
+                  <span class="font__medium">Peso Inicial Informado:</span>
+                  {{lista_atual_res['pesoInicial']}}kg;
+                </h4>
+                <p>
+                  Atualmente, seu
+                  <span class="font__medium">ganho médio diário</span> é de
+                  <span class="font__medium">{{lista_atual_res['gmd']}}g</span>,
+                  com o Zimprova™,
+                  <span class="font__medium"
+                    >seria de {{lista_zimprova_res['gmd']}}g</span
+                  >, gerando até
+                  <span class="font__medium"
+                    >{{lista_zimprova_res['ganhoPeso']}}kg</span
+                  >
+                  a mais no período, com peso
+                  <span class="font__medium"
+                    >final por cabeça de
+                    {{lista_zimprova_res['pesoFinal']}}kg</span
+                  >, {{lista_zimprova_res['ganhoPeso%']}}% a mais do que sem o
+                  Zimprova.
+                </p>
+              </div>
+              <p>
+                Atualmente, você produz
+                <span class="font__medium">
+                  {{lista_atual_res['producaoArroba']}} arrobas por cabeça</span
+                >, totalizando
+                <span class="font__medium"
+                  >{{lista_atual_res['producaoTotalArroba']}} arrobas</span
+                >. Mas com o Zimprova™, seu potencial é de
+                <span class="font__medium">
+                  {{lista_zimprova_res['producaoArroba']}} arrobas por
+                  cabeça</span
+                >, totalizando
+                <span class="font__medium"
+                  >{{lista_zimprova_res['producaoTotalArroba']}} arrobas, um
+                  resultado {{lista_zimprova_res['ganhoArroba%']}} % maior</span
+                >.
+              </p>
+              <div>
+                <h4>Vamos falar de lucro?</h4>
+                <p>
+                  A receita produzida com base nas suas informações é de
+                  <span class="font__medium"
+                    >R${{lista_atual_res['receitaProduzida']}}</span
+                  >, mas
+                  <span class="font__medium"
+                    >com Zimprova™, seria de
+                    R${{lista_zimprova_res['receitaProduzida']}}, que é
+                    {{lista_zimprova_res['aumentoReceita']}}% maior</span
+                  >.
+                </p>
+              </div>
+              <p>
+                Para gerar tudo isso, o Zimprova™ te custaria
+                <span class="font__medium"
+                  >R${{lista_zimprova_res[ 'desembolsoAdicional']}}</span
+                >, ou seja, seu
+                <span class="font__medium"
+                  >Lucro Líquido seria de
+                  R${{lista_zimprova_res['lucroLiquido']}}</span
+                >.
+              </p>
+              <p>
+                <span class="font__medium"
+                  >O investimento em Zimprova™ te retornará
+                  R${{lista_zimprova_res['ROI']}} a cada R$1,00 investido</span
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="home__action container grid">
+          <h2 class="home__title">
+            Ficou interessado? <br />Encontre parceiros Elanco que contam com
+            Zimprova™
+          </h2>
+
+          <a
+            class="button"
+            href="https://agropecuaria.elanco.com/br/produtos/corte/zimprova"
+            target="_blank"
+            >Encontrar zimprova™</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- ============= FOOTER =============-->
+    <footer class="footer">
+      <div class="footer__container container grid">
+        <img src="{{url_for('static', filename='logo-footer.png')}}" alt="" />
+
+        <p class="footer__copyright">Copyright 2023 - Elanco Saúde Animal</p>
+      </div>
+    </footer>
+  </body>
+</html>
