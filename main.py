@@ -50,7 +50,39 @@ def async_slow_function(funct ,some_object):
     return thr
 
     
-      
+
+
+#Funções para distribuir os Leads tanto para gmail quanto google Sheets
+
+
+#Função para enviar o lead ao google sheet. obs: não mudar o nome da planilha. Se o fizer, mudar aqui também. 
+gc =  gp.service_account('secrets.json')
+spreadsheet = gc.open("Leads Zimprova")
+
+def RegistraGoogleSheets( lista_dados):
+    lead =[]
+    worksheet= spreadsheet.get_worksheet(0)
+    data = worksheet.get_all_values()
+    
+    cols =int(len(data[0]))+1
+    row = len(data)+1
+    
+    id = row -2
+    horario = (str(datetime.now()).split(" "))[0]
+    
+    lead.append(id) 
+    lead.append(horario) 
+    
+    #vou adicionar as infos 
+    for item in lista_dados:
+        for x in  item:
+            if x != 'pesoInicial' and x!='ganhoPeso%' and x !='ganhoArroba%':
+                lead.append(item[x]) 
+                    
+    #registrando lead
+    for i in range(0,len(lead)):
+       worksheet.update_cell(row, i+1,lead[i] )
+       
 
     
 
