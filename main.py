@@ -53,7 +53,7 @@ def async_slow_function(funct ,some_object):
 
 
 #Funções para distribuir os Leads tanto para gmail quanto google Sheets
-"""def sendGmail(lista_dados):
+def sendGmail(lista_dados):
     lista_contato =lista_dados[0]
     dados = lista_dados[1]
     lista_atual = lista_dados[2]
@@ -106,7 +106,7 @@ def async_slow_function(funct ,some_object):
 
 
 
-
+"""
 #Função para enviar o lead ao google sheet. obs: não mudar o nome da planilha. Se o fizer, mudar aqui também. 
 gc =  gp.service_account('secrets.json')
 spreadsheet = gc.open("Leads Zimprova")
@@ -305,7 +305,7 @@ def home_calc():
         }
        
         async_slow_function(RegistraGoogleSheets,[lista_contato,dados, lista_atual_filtered,lista_zimprova])
-        async_slow_function(sendGmail,[lista_contato,dados, lista_atual,lista_zimprova])
+       # async_slow_function(sendGmail,[lista_contato,dados, lista_atual,lista_zimprova])
        
        
         return render_template('resultado.html', lista_atual_res = lista_atual, lista_zimprova_res =lista_zimprova, lista_contato_res = lista_contato)   # return render_template('obrigado.html', quantidade_animais_answer = quantidade_animais, peso_medio_answer =peso_medio, duracao_periodo_answer=duracao_periodo,aditivo_utilizado_answer=aditivo_utilizado, gmd_answer=gmd, preco_arroba_answer= preco_arroba, preco_suplemento_answer =preco_suplemento, suplemento_atual_answer=suplemento_atual)
