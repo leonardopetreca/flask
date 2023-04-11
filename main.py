@@ -53,7 +53,7 @@ def async_slow_function(funct ,some_object):
 
 
 #Funções para distribuir os Leads tanto para gmail quanto google Sheets
-def sendGmail(lista_dados):
+"""def sendGmail(lista_dados):
     lista_contato =lista_dados[0]
     dados = lista_dados[1]
     lista_atual = lista_dados[2]
@@ -135,7 +135,7 @@ def RegistraGoogleSheets( lista_dados):
     for i in range(0,len(lead)):
        worksheet.update_cell(row, i+1,lead[i] )
        
-
+"""
     
 
 #app routes
