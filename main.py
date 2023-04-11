@@ -58,8 +58,8 @@ def sendGmail(lista_dados):
     lista_zimprova =lista_dados[3]
     
     
-    load_dotenv()
-    PASSWORD = os.getenv("PASSWORD")
+    #load_dotenv()
+   # PASSWORD = os.getenv("PASSWORD")
     
     sender="Elanco - Calculadora Zimprova"
     receiver="andre@marketinglabs.com.br"
@@ -97,17 +97,17 @@ def sendGmail(lista_dados):
     
     
     
-    print(content)
-    yag = yagmail.SMTP(user='andre@marketinglabs.com.br', password=PASSWORD)
-    yag.send(to=receiver, subject=Subject, contents=content)
+    #print(content)
+  #  yag = yagmail.SMTP(user='andre@marketinglabs.com.br', password=PASSWORD)
+   # yag.send(to=receiver, subject=Subject, contents=content)
 
 
 
 
 
 #Função para enviar o lead ao google sheet. obs: não mudar o nome da planilha. Se o fizer, mudar aqui também. 
-gc =  gp.service_account('zimprova\secrets.json')
-spreadsheet = gc.open("Leads Zimprova")
+#gc =  gp.service_account('zimprova\secrets.json')
+#spreadsheet = gc.open("Leads Zimprova")
 
 def RegistraGoogleSheets( lista_dados):
     lead =[]
