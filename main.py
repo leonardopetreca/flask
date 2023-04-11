@@ -60,9 +60,9 @@ def sendGmail(lista_dados):
     lista_zimprova =lista_dados[3]
     
     
-    load_dotenv()
-    PASSWORD = os.getenv("PASSWORD")
-    
+    #load_dotenv()
+    #PASSWORD = os.getenv("PASSWORD")
+    PASSWORD =${{shared.DOMAIN}}
     sender="Elanco - Calculadora Zimprova"
     receiver="andre@marketinglabs.com.br"
     Subject = "Lead-Zimprova"
