@@ -304,7 +304,7 @@ def home_calc():
             'custoDiarioSuplemento':lista_atual['custoDiarioSuplemento']
         }
        
-        async_slow_function(RegistraGoogleSheets,[lista_contato,dados, lista_atual_filtered,lista_zimprova])
+        #async_slow_function(RegistraGoogleSheets,[lista_contato,dados, lista_atual_filtered,lista_zimprova])
        # async_slow_function(sendGmail,[lista_contato,dados, lista_atual,lista_zimprova])
        
        
