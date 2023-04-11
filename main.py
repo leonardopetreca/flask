@@ -53,6 +53,58 @@ def async_slow_function(funct ,some_object):
 
 
 #Funções para distribuir os Leads tanto para gmail quanto google Sheets
+def sendGmail(lista_dados):
+    lista_contato =lista_dados[0]
+    dados = lista_dados[1]
+    lista_atual = lista_dados[2]
+    lista_zimprova =lista_dados[3]
+    
+    
+    load_dotenv()
+    PASSWORD = os.getenv("PASSWORD")
+    
+    sender="Elanco - Calculadora Zimprova"
+    receiver="andre@marketinglabs.com.br"
+    Subject = "Lead-Zimprova"
+    
+    
+     
+    
+    #Construção do corpo de email 
+    itens=""
+    for x in lista_contato:
+        itens = str(itens) + '<tr "> <td style="width:100px;">'+ x +'</td>' +'<td>'+ lista_contato[x] +'</td> </tr>'
+    
+    resultados='<tr> <td width:200px;">' + '</td>'+'<td width:100px;> Atualmente </td>' + '<td width:150px;> Com Zimprova </td></tr> '
+    for x in lista_zimprova:
+       resultados = str(resultados) + '<tr> <td  style="width:250px;"><b>'+ x +'</b> ('+listasUnidades[x]+')</td>' +'<td style="width:150px;"> '+ str(lista_atual [x])+ '</td>'+'<td style="width:150px;">'+ str(lista_zimprova[x]) +'</td> </tr>'
+     
+    fazenda=''
+    for x in  dados:
+       fazenda = str(fazenda) + '<tr> <td style="width:250px; ">'+ x +'</td>' +'<td style="width:150px; ">'+ str(dados[x]) + ' <span style="fontsize:8px;">'+ dadosUnidades[x]+'</span></td> </tr>'
+    
+    content =f'''
+    
+    <h2 style="color:black"> Dados de Contato</h2>
+    <table style="color:black">{itens}</table>
+   
+    <h2 style="color:black"> Dados da Fazenda</h2>
+    <table style="color:black">{fazenda}</table>
+    
+    <h2 style="color:black"> Resultados</h2>
+    <table style="color:black">{resultados}</table>
+    
+    '''
+    
+    
+    
+    
+    #print(content)
+    yag = yagmail.SMTP(user='andre@marketinglabs.com.br', password=PASSWORD)
+    yag.send(to=receiver, subject=Subject, contents=content)
+
+
+
 
 
 #Função para enviar o lead ao google sheet. obs: não mudar o nome da planilha. Se o fizer, mudar aqui também. 
